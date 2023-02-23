@@ -2,42 +2,49 @@ import styled from "styled-components";
 
 export const Home = styled.div`
 width: 100vw;
+
 display: flex;
 justify-content: space-around;
-
 position: fixed;
-bottom: 0;
+bottom: 5rem;  
 
 @media (max-width: 768px) {
-       display: block;
-
+display: block;
+margin: auto;
+justify-content: center;
+align-items: center;
+height: 100vh;
+position: relative;
 }
-
 `
 
 export const TitleBox = styled.section`
-width: 480px;
+width: 45vw;
 margin: 0 0 7rem 0;
 
 
-    h1{
-    margin: 0 0 1rem 0;
-   }
+h1 {
+    margin: 2.5rem 0;
    
+}
+
    @media (max-width: 768px) {
         margin: auto;
-        padding-top: 5rem;
+        padding: 5rem 1rem 0 1rem;
+}
 
+@media (max-width: 600px) {
+    width: auto;
+    text-align: center;
+    margin: 0; 
 }
 
 @media (max-width: 1400px) {
    
 }
-
     text-align: justify;
     justify-content: center;
     align-items: center, no-repeat;
-
 ` 
 
 export const ExploreButtonDiv = styled.div`
@@ -57,11 +64,11 @@ export const MainButton = styled.button`
 
 margin-top: 5rem;
 
-font-size: 32px;
+font-size: 2vw;
 font-family: "bellefair", sans-serif;
 
-height: 270px;
-width: 270px;
+height: 20vw;
+width: 20vw;
 
 border-radius: 50%;
 background-color: #ffffff;
@@ -69,12 +76,16 @@ border: none;
 transition: ease-in-out 0.2s;
 
 :hover{
-    outline: 20px solid #979797; ;
+    background-color: rgba(255, 255,253,0.8);
+    outline: 20px solid #979797;
+    backdrop-filter: blur(10px);
 }
 
 
-@media (max-width: 1400px) {
-  
+@media (max-width: 600px) {
+    height: 150px;
+width: 150px;
+font-size: 18px
 }
 
 `

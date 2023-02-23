@@ -1,30 +1,55 @@
-import React from 'react'
-import { BodyText, Heading1, Heading3, Heading4, NavText, Subheading1 } from '../../styles/Headings';
-import { Home, TitleBox, ExploreButtonDiv } from './style'
-import Ansari from '../../assets/crew/image-anousheh-ansari.png'
+import React, { useState } from 'react'
+import { BodyText, Heading1, Heading3, Heading4, Heading5, NavText, Subheading1 } from '../../styles/Headings';
+import { Home, TitleBox, SliderButton, Textinfo, CrewPicture } from './style'
+import { CrewData } from '../../Data/CrewDataData';
+import PageTitle from '../../components/PageTitle/PageTitle';
+
+import Pic from '../../assets/crew/image-douglas-hurley.png';
 
 const Crew = () => {
+  const [role, setRole] = useState("COMMANDER");
+
+  const Commander = () => setRole("COMMANDER");
+  const Specialist = () => setRole("MISSION SPECIALIST");
+  const Pilot = () => setRole("PILOT");
+  const Flight = () => setRole("FLIGHT ENGINEER");
+
   return (
-    <Home>
+    <>
+    <PageTitle id={"02"} title={"MEET YOUR CREW"}/>
+   
+      
+    {CrewData.filter(crew => crew.role === role).map(Crew => (
+      <>
+       <Home>
+      <TitleBox>
+      <Textinfo>
+      <div>
+      <Subheading1>{Crew.role}</Subheading1>
+      </div>
+      <Heading3>{Crew.name}</Heading3>
+      <BodyText>{Crew.about}</BodyText>
+      </Textinfo>
 
-     <TitleBox>
-     <div className="batata">
-        <Subheading1><p>02</p> MEET YOUR CREW</Subheading1>
-        </div>
+      <SliderButton>
+        <button className={role === "COMMANDER" ? '' : 'deactive'}onClick={Commander}></button>
+        <button className={role === "MISSION SPECIALIST" ? '' : 'deactive'} onClick={Specialist}></button>
+        <button className={role === "PILOT" ? '' : 'deactive'} onClick={Pilot}></button>
+        <button className={role === "FLIGHT ENGINEER" ? '' : 'deactive'} onClick={Flight}></button>
+      </SliderButton>
+    </TitleBox>
 
-      <Heading4>Flight Engineer</Heading4>
-      <Heading3>Anousheh Ansari</Heading3>
-      <BodyText>Let’s face it; if you want to go to space, you might as well 
-        genuinely go to outer space and not hover kind of on the 
-        edge of it. Well sit back, and relax because we’ll give you a 
-        truly out of this world experience!</BodyText>
-     </TitleBox>
-
-    <ExploreButtonDiv>
-      <img src={Ansari} />
-    </ExploreButtonDiv>
-
+    <CrewPicture>
+      <img src={Crew.picture} />
+    </CrewPicture>
     </Home>
+    </>
+   
+     ))}
+      
+
+    
+    </>
   )
 }
 

@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import Image from '../../assets/destination/background-destination-desktop.jpg'
 
 export const DestinationSection = styled.section`
 
 display: flex;
-position: fixed;
+
 bottom: 6rem;
 justify-content: space-around;
 width: 100%;
@@ -55,20 +54,15 @@ p {
 `
 
 export const Planet = styled.div`
+margin-top: 5rem;
 
-
-@media (max-width: 900px) {
-   img {
-    height: 250px;
-    margin: 1.5rem 0;
-   }
-
-   @media (max-width: 500px) {
-   img {
-    height: 250px;
-    margin: 0 0 1rem 0;
-   }
+img {
+  width: 100%;
+  height: auto;
 }
+
+@media (max-width: 600px) {
+  margin: 0 2rem;
 }
 `
 
@@ -83,7 +77,6 @@ margin-left: -10rem;
   background-color: #383B4B;
 
   @media (max-width: 1100px) {
-    
    width: 100%;
   }
 }
@@ -97,6 +90,10 @@ margin-left: -10rem;
   h2 {
     text-align: center;
   }
+}
+
+@media (max-width: 600px) {
+  text-align: center;
 }
 
 `
@@ -137,6 +134,7 @@ li {
 
 export const DestinationText = styled.section`
 margin: 1rem 0;
+
 max-width: 445px;
 text-align: start;
 

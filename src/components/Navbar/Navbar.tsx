@@ -1,37 +1,50 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavText } from '../../styles/Headings'
-import { Nav} from './styles'
+import { CloseIcon, LogoDiv, Nav, NavDiv} from './styles'
 import Logo from '../../assets/shared/logo.svg';
+import Sidebar from './Sidebar';
+import { Link } from 'react-router-dom';
+
 
 
 const Navbar = () => {
-  return (
-    <Nav>
-    <img src={Logo} alt="logo" />
+  
 
+
+  return (
+    <NavDiv>
+   <Sidebar/>
+      <Nav>
+    <LogoDiv className="logo">
+    <img src={Logo} alt="logo" />
+    </LogoDiv>
+  
     <div className="rectangle"></div>
 
-    <div>
+    <div className="MenuDiv">
     <ul>
         <li>
-          <NavText><p>00</p> HOME</NavText>
+          <NavText to='/'><p>00</p> HOME</NavText>
         </li>
 
         <li>
-          <NavText><p>01</p> DESTINATION</NavText>
+          <NavText to='/destination'><p>01</p> DESTINATION</NavText>
         </li>
 
         <li>
-          <NavText><p>02</p> CREW</NavText>
+          <NavText to="crew"><p>02</p> CREW</NavText>
         </li>
 
         <li>
-          <NavText><p>03</p> TECHNOLOGY</NavText>
+          <NavText to="technology"><p>03</p> TECHNOLOGY</NavText>
         </li>
       </ul>
-    </div>
 
+    </div>
+    
     </Nav>
+    
+    </NavDiv>
   )
 }
 

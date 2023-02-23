@@ -1,12 +1,17 @@
+import { ReactNode, useEffect, useState } from "react";
 import { createGlobalStyle } from "styled-components";
-import Image from "../assets/destination/background-destination-desktop.jpg"
-import ImageMobile from '../assets/home/background-home-mobile.jpg'
+import ImageHome from "../assets/home/background-home-desktop.jpg"
+import ImageDestination from '../assets/destination/background-destination-desktop.jpg';
+import { useLocation } from "react-router-dom";
+
+
+const route = window.location.href;
+const href = route.substring(21);
+
+
 
 export const GlobalStyle = createGlobalStyle`
 
-:root{
-    --heading1: 300px;
-}
 
 * {
     box-sizing: border-box;
@@ -14,24 +19,19 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility
+    text-rendering: optimizeLegibility;
+
+   
 
 }
 
 body {
     height: 100%;
-    background-color: #0B0D17;
+    background-image: url(${ImageDestination});
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     background-repeat: no-repeat;
-
- 
-    
-
-    p {
-        @media (max-width: 768px) {
-                display: none;
-        }
-    }
 }
 `
 

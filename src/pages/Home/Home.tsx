@@ -1,10 +1,13 @@
 import React from 'react'
+import PageTitle from '../../components/PageTitle/PageTitle';
 import { BodyText, Heading1, Heading4, NavText, Subheading1 } from '../../styles/Headings';
 import { Button } from './Button';
 import { Home, TitleBox, ExploreButtonDiv } from './styles'
 
 const HomePage = () => {
   return (
+    <>
+   
     <Home>
      
      <TitleBox>
@@ -21,6 +24,7 @@ const HomePage = () => {
     </ExploreButtonDiv>
 
     </Home>
+    </>
   )
 }
 

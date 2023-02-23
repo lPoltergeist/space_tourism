@@ -1,97 +1,118 @@
 import styled from "styled-components";
 
 export const Home = styled.div`
-width: 100vw;
 display: flex;
 justify-content: space-around;
+margin: auto;
 
-position: fixed;
-bottom: 0rem;
 
 @media (max-width: 768px) {
-       display: block;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    flex-direction: column-reverse;
 }
 
 `
 
 export const TitleBox = styled.section`
-width: 532px;
-margin: 0 -10rem 10rem 0;
+max-width: 80ch;
+margin: auto;
 
-.batata{
-    margin-top: -5rem;
+@media (max-width: 600px) {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
-p{
-    color:#535353; 
-    margin-right: 0.5rem;
-}
-
-h4 {
-    color: #535353;
-    text-transform: uppercase;
-    margin-top: 9rem;
-    margin-bottom: 1rem;
-}
-
-
-    h3{
-        font-size: 3rem;
-    margin: 0 0 1rem 0;
-    text-transform: uppercase;
-   }
-   
-   @media (max-width: 768px) {
-        margin: auto;
-        padding-top: 5rem;
-
-}
-
-@media (max-width: 1400px) {
-   
-}
-
-    text-align: justify;
-    justify-content: center;
-    align-items: center, no-repeat;
 
 ` 
 
-export const ExploreButtonDiv = styled.div`
+export const Textinfo = styled.div`
 
 
 @media (max-width: 768px) {
-  display: flex;
-  width: 100vw;
+  display: block;
   justify-content: center;
-  margin-bottom: 2rem;
+  width: 100vw;
+  padding: 0 5%;
 
+  div {
+    width: 90vw;
+    display: flex;
+    text-align: center;
+  }
+
+    text-align: center;
+    font-size: 70%;
+
+    h1 { 
+    text-align: center;
+    margin: auto;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
 }
 
 `
 
-export const MainButton = styled.button`
+export const SliderButton = styled.div`
 
-margin-top: 5rem;
-
-font-size: 32px;
-font-family: "bellefair", sans-serif;
-
-height: 270px;
-width: 270px;
-
-border-radius: 50%;
-background-color: #ffffff;
-border: none;
-transition: ease-in-out 0.2s;
-
-:hover{
-    outline: 20px solid #979797; ;
+@media (max-width: 768px) {
+    display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
+button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
 
-@media (max-width: 1400px) {
-  
+
+    margin-top: 10rem;
+    :nth-child(n+2) {
+        margin-left: 1rem;
+    }
+
+    @media (max-width: 600px) {
+   margin: 2rem 1rem;
+   height: 15px;
+   width: 15px;
+
+}
 }
 
+.deactive {
+    background-color: rgba(151,151,151, 0.4);
+}
 `
+
+export const CrewPicture = styled.div`
+margin-right: 10%;
+height: 100%;
+
+padding-top: 4rem;
+
+@media (max-width: 768px) {
+    margin: auto;
+}
+
+@media (max-width: 600px) {
+    margin: 0 1rem;
+    padding: 0 3rem;
+    border-bottom: 1px solid rgba(151,151,151, 0.2);
+}
+
+
+img {
+    height: auto;
+max-width: 100%;
+margin-bottom: -5px;
+}
+`
+
